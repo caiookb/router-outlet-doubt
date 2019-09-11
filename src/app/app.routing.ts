@@ -10,31 +10,13 @@ import { ServicesComponent } from './components/services';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      {
-    path: '',
-    component: BudgetsComponent,
-    children: [{
-        path: '',
-        component: InfoComponent,
-        outlet: 'info'
-      },
-      {
-        path: '',
-        component: ServicesComponent,
-        outlet: 'services'
-      },
-      {
-        path: 'view',
-        component: ViewServiceComponent,
-        outlet: 'info'
-      },
-      {
-        path: 'view',
-        component: ViewServiceComponent,
-        outlet: 'services'
-      }
-
-    ]
+      { path: '', pathMatch: 'full', redirectTo: 'app'},
+      { path: 'app',component: BudgetsComponent, children: [
+        { path: '', component: InfoComponent, outlet: 'info' },
+        { path: '', component: ServicesComponent, outlet: 'services' },
+        { path: 'view', component: ViewServiceComponent, outlet: 'info' },
+        { path: 'view', component: ViewServiceComponent, outlet: 'services' }
+      ]
   },
     ])
   ],

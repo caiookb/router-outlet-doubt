@@ -6,7 +6,7 @@ template: `
 <div class="container">
   <div class="serv">
       <h1>Services</h1>
-      <button [routerLink]="[{ outlets: { primary: { services: ['view'] }}}]"> Go to services view</button>
+      <button [routerLink]="[{outlets: {services: ['view']}}]"> Go to services view</button>
   </div>
 </div>
 `,
